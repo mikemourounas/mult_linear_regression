@@ -77,6 +77,8 @@ def backward_elimination(y, x, SL):
 
 # Perform backward elimination
 X_vals = X.iloc[:, :].values
+X_vals = np.append(arr=np.ones(shape=(506, 1)).astype(int),
+                   values=X_vals, axis=1)
 y_vals = y.values
 
 X_modeled = backward_elimination(y_vals, X_vals, SL=0.05)
